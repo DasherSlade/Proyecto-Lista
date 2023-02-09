@@ -16,6 +16,8 @@ export class TasksComponent implements OnInit {
     private taskService: TaskService
   ) { }
 
+
+
   ngOnInit(): void {
     
     this.taskService.getTask().subscribe((tasks)=>(
@@ -35,7 +37,7 @@ export class TasksComponent implements OnInit {
 
   toggleReminder(task:Task){
     task.reminder = !task.reminder
-    this.taskService.updateTaskReminder(task).subscribe();
+    this.taskService.updateTaskReminder(task).subscribe();    
   }
 
   addTask(task:Task){
